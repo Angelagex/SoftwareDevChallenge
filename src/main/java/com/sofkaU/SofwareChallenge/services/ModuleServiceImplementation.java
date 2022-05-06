@@ -33,15 +33,17 @@ public class ModuleServiceImplementation implements ModuleService{
 
     @Override
     public Module updateModule(Module module) {
-        return moduleRepository.save(module);
+        Module moduleToUpdate = moduleRepository.findById(module.getId()).get();
+        moduleToUpdate.setTitle(module.getTitle());
+        return moduleRepository.save(moduleToUpdate);
     }
 
     @Override
     public Module updateTask(Task task) {
+        Task taskToChange = taskRepository.findById(task.getId()).get();
+        taskToChange.setTitle(task.getTitle());
+        taskToChange.setDone(task.getDone());
         Module module = moduleRepository.findById(task.getFkModuleId()).get();
-        //taskRepository.deleteById(task.getId());
-        module.addTask(task);
-        taskRepository.save(task);
         return moduleRepository.save(module);
     }
 
@@ -56,6 +58,7 @@ public class ModuleServiceImplementation implements ModuleService{
         if(moduleToDelete.getTasks().size() > 0 ){
             moduleToDelete.getTasks().forEach(task -> taskRepository.deleteById(task.getId()));
         }
+        moduleRepository.deleteById(id);
     }
 
     @Override
