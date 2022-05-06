@@ -15,5 +15,5 @@ public class Task {
     private Long id;
     private String title;
     private boolean done;
-    private Long fkPostId;
+    private Long fkModuleId;
 }
