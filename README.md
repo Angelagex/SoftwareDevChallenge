@@ -22,4 +22,5 @@ Once you have followed the steps above, you just need to go to your IntelliJ, op
 
 ## Notes
 
-Also you need to go to [this link](https://github.com/Angelagex/SoftwareDevChallengeReact) and follow the steps to have the frontEnd layer of the app, or you could test all the methods usind Postman and sending requests to the directions defined on the controller class.
+1. Also you need to go to [this link](https://github.com/Angelagex/SoftwareDevChallengeReact) and follow the steps to have the frontEnd layer of the app, or you could test all the methods usind Postman and sending requests to the directions defined on the controller class.
+2. To run this project on your local you need to have installed MySql Workbench on your computer and create a schema with the name of modules.
